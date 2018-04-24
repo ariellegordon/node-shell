@@ -5,6 +5,8 @@ process.stdin.on('data', (data) => {
       pwd()
   } else if (cmd === 'ls') {
       ls()
+  } else if (cmd.split(" ")[0] === "cat") {
+      cat(cmd.split(" ")[1])
   } else {
       process.stdout.write('You typed: ' + cmd);
   }
@@ -14,4 +16,5 @@ process.stdin.on('data', (data) => {
 });
 
 const pwd = require('./pwd.js');
-const ls = require('./ls.js')
+const ls = require('./ls.js');
+const cat = require('./cat.js')
